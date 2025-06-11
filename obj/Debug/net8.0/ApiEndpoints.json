@@ -18,8 +18,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "paciente",
-        "Type": "HOSPISIM.Entities.Paciente",
+        "Name": "dto",
+        "Type": "HOSPISIM.DTO.PacienteDTO",
         "IsRequired": true
       }
     ],
@@ -55,8 +55,8 @@
         "IsRequired": true
       },
       {
-        "Name": "paciente",
-        "Type": "HOSPISIM.Entities.Paciente",
+        "Name": "dto",
+        "Type": "HOSPISIM.DTO.PacienteDTO",
         "IsRequired": true
       }
     ],

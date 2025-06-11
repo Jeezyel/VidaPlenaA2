@@ -1,6 +1,8 @@
-﻿using HOSPISIM.Entities;
+﻿using HOSPISIM.DTO;
+using HOSPISIM.Entities;
 using HOSPISIM.Persistence;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 
@@ -33,39 +35,73 @@ public class PacienteController : ControllerBase
     }
 
     [HttpPost]
-    public IActionResult Create(Paciente paciente)
+    public IActionResult Create(PacienteDTO dto)
     {
-        paciente.Id = Guid.NewGuid();
+        var prontuarios = _context.Prontuarios
+        .Where(p => dto.ProntuarioIds.Contains(p.Id))
+        .ToList();
+
+        var paciente = new Paciente
+        {
+            Id = Guid.NewGuid(),
+            NomeCompleto = dto.NomeCompleto,
+            CPF = dto.CPF,
+            DataNascimento = dto.DataNascimento,
+            Sexo = dto.Sexo,
+            TipoSanguineo = dto.TipoSanguineo,
+            Telefone = dto.Telefone,
+            Email = dto.Email,
+            EnderecoCompleto = dto.EnderecoCompleto,
+            NumeroCartaoSUS = dto.NumeroCartaoSUS,
+            PossuiPlanoSaude = dto.PossuiPlanoSaude,
+
+            Prontuarios = prontuarios
+
+        };
+
         _context.Pacientes.Add(paciente);
         _context.SaveChanges();
+
         return CreatedAtAction(nameof(GetById), new { id = paciente.Id }, paciente);
     }
 
     [HttpPut("{id}")]
-    public IActionResult Update(Guid id, Paciente paciente)
+    public IActionResult Update(Guid id, PacienteDTO dto)
     {
-        if (id != paciente.Id)
-            return BadRequest("Id Invalido");
+        // Busca o paciente existente
+        var pacienteExistente = _context.Pacientes
+            .Include(p => p.Prontuarios) // inclui os prontuários atuais
+            .FirstOrDefault(p => p.Id == id);
 
-        var existente = _context.Pacientes.Find(id);
-        if (existente == null)
-            return NotFound("Paciente Não Encontrado");
+        if (pacienteExistente == null)
+            return NotFound("Paciente não encontrado.");
 
-        // Atualiza os campos manualmente
-        existente.NomeCompleto = paciente.NomeCompleto;
-        existente.CPF = paciente.CPF;
-        existente.DataNascimento = paciente.DataNascimento;
-        existente.Sexo = paciente.Sexo;
-        existente.TipoSanguineo = paciente.TipoSanguineo;
-        existente.Telefone = paciente.Telefone;
-        existente.Email = paciente.Email;
-        existente.EnderecoCompleto = paciente.EnderecoCompleto;
-        existente.NumeroCartaoSUS = paciente.NumeroCartaoSUS;
-        existente.EstadoCivil = paciente.EstadoCivil;
-        existente.PossuiPlanoSaude = paciente.PossuiPlanoSaude;
+        // Atualiza os dados do paciente
+        pacienteExistente.NomeCompleto = dto.NomeCompleto;
+        pacienteExistente.CPF = dto.CPF;
+        pacienteExistente.DataNascimento = dto.DataNascimento;
+        pacienteExistente.Sexo = dto.Sexo;
+        pacienteExistente.TipoSanguineo = dto.TipoSanguineo;
+        pacienteExistente.Telefone = dto.Telefone;
+        pacienteExistente.Email = dto.Email;
+        pacienteExistente.EnderecoCompleto = dto.EnderecoCompleto;
+        pacienteExistente.NumeroCartaoSUS = dto.NumeroCartaoSUS;
+        pacienteExistente.EstadoCivil = dto.EstadoCivil;
+        pacienteExistente.PossuiPlanoSaude = dto.PossuiPlanoSaude;
+
+        // Atualiza os prontuários associados (se algum foi passado)
+        if (dto.ProntuarioIds != null)
+        {
+            var prontuarios = _context.Prontuarios
+                .Where(p => dto.ProntuarioIds.Contains(p.Id))
+                .ToList();
+
+            pacienteExistente.Prontuarios = prontuarios;
+        }
 
         _context.SaveChanges();
-        return NoContent();
+
+        return NoContent(); // 204 - Atualizado com sucesso, sem retorno de corpo
     }
 
     [HttpDelete("{id}")]

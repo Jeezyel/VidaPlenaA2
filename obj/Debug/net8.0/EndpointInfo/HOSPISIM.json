@@ -24,17 +24,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Paciente"
+                "$ref": "#/components/schemas/PacienteDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Paciente"
+                "$ref": "#/components/schemas/PacienteDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Paciente"
+                "$ref": "#/components/schemas/PacienteDTO"
               }
             }
           }
@@ -87,17 +87,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Paciente"
+                "$ref": "#/components/schemas/PacienteDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Paciente"
+                "$ref": "#/components/schemas/PacienteDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Paciente"
+                "$ref": "#/components/schemas/PacienteDTO"
               }
             }
           }
@@ -172,13 +172,9 @@
   },
   "components": {
     "schemas": {
-      "Paciente": {
+      "PacienteDTO": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
           "nomeCompleto": {
             "type": "string",
             "nullable": true
@@ -221,6 +217,14 @@
           },
           "possuiPlanoSaude": {
             "type": "boolean"
+          },
+          "prontuarioIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
