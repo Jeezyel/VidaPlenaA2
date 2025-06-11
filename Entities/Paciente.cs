@@ -2,7 +2,6 @@
 {
     public class Paciente
     {
-
         public Guid Id { get; set; }
         public string NomeCompleto { get; set; }
         public string CPF { get; set; }
@@ -15,5 +14,8 @@
         public string NumeroCartaoSUS { get; set; }
         public string EstadoCivil { get; set; }
         public bool PossuiPlanoSaude { get; set; }
+
+        // Relacionamento 1:N com Prontuario
+        public ICollection<Prontuario> Prontuarios { get; set; }
     }
 }
