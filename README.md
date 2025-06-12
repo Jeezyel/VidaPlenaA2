@@ -25,4 +25,6 @@ API desenvolvida em ASP.NET Core para gerenciamento de .
    dotnet ef migrations add [nome que deseja]
    dotnet ef database update
 
+# IMAGEN DA UML DO PROJETO
+
 ![ImagenUML](https://github.com/user-attachments/assets/66113754-1d2e-493c-b249-471cd275fd7a)
