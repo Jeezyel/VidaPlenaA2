@@ -20,7 +20,7 @@ API desenvolvida em ASP.NET Core para gerenciamento de .
   }
 
 3.criaçao
-  va no seu ssms e crie um banco para conectar com a api
+  va no seu ssms e crie um banco (VidaPlenaDB) para conectar com a api
 
 4. rode os comando de de migração
    dotnet ef migrations add [nome que deseja]
