@@ -1,0 +1,120 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+' Entidades principais
+class Paciente {
+  +Id : Guid
+  +NomeCompleto : string
+  +CPF : string
+  +DataNascimento : DateTime
+  +Sexo : string
+  +TipoSanguineo : string
+  +Telefone : string
+  +Email : string
+  +EnderecoCompleto : string
+  +NumeroCartaoSUS : string
+  +EstadoCivil : string
+  +PossuiPlanoSaude : bool
+}
+
+class Prontuario {
+  +Id : Guid
+  +NumeroProntuario : string
+  +DataAbertura : DateTime
+  +ObservacoesGerais : string
+}
+
+class Atendimento {
+  +Id : Guid
+  +DataHora : DateTime
+  +Tipo : string
+  +Status : string
+  +Local : string
+}
+
+class ProfissionalSaude {
+  +Id : Guid
+  +NomeCompleto : string
+  +CPF : string
+  +Email : string
+  +Telefone : string
+  +RegistroConselho : string
+  +TipoRegistro : string
+  +DataAdmissao : DateTime
+  +CargaHorariaSemanal : int
+  +Turno : string
+  +Ativo : bool
+}
+
+class Especialidade {
+  +Id : Guid
+  +Nome : string
+}
+
+class Internacao {
+  +Id : Guid
+  +DataEntrada : DateTime
+  +PrevisaoAlta : DateTime
+  +MotivoInternacao : string
+  +Leito : string
+  +Quarto : string
+  +Setor : string
+  +PlanoSaudeUtilizado : string
+  +ObservacoesClinicas : string
+  +StatusInternacao : string
+}
+
+class AltaHospitalar {
+  +Id : Guid
+  +Data : DateTime
+  +CondicaoPaciente : string
+  +InstrucoesPosAlta : string
+}
+
+class Prescricao {
+  +Id : Guid
+  +Medicamento : string
+  +Dosagem : string
+  +Frequencia : string
+  +ViaAdministracao : string
+  +DataInicio : DateTime
+  +DataFim : DateTime
+  +Observacoes : string
+  +StatusPrescricao : string
+  +ReacoesAdversas : string
+}
+
+class Exame {
+  +Id : Guid
+  +Tipo : string
+  +DataSolicitacao : DateTime
+  +DataRealizacao : DateTime
+  +Resultado : string
+}
+
+' Relacionamentos
+Paciente "1" -- "0..*" Prontuario
+Prontuario "1" -- "0..*" Atendimento
+Paciente "1" -- "0..*" Internacao
+Paciente "1" -- "0..*" Atendimento
+ProfissionalSaude "1" -- "0..*" Atendimento
+ProfissionalSaude "1" -- "0..*" Prescricao
+Especialidade "1" -- "0..*" ProfissionalSaude
+Atendimento "1" -- "0..1" Internacao
+Internacao "0..1" -- "1" AltaHospitalar
+Atendimento "1" -- "0..*" Prescricao
+Atendimento "1" -- "0..*" Exame
+
+' Relações com navegação FK
+Prontuario "1" --> "1" Paciente : PacienteId
+Atendimento "1" --> "1" Paciente : PacienteId
+Atendimento "1" --> "1" ProfissionalSaude : ProfissionalId
+Atendimento "1" --> "1" Prontuario : ProntuarioId
+Internacao "1" --> "1" Atendimento : AtendimentoId
+Prescricao "1" --> "1" Atendimento : AtendimentoId
+Prescricao "1" --> "1" ProfissionalSaude : ProfissionalId
+Exame "1" --> "1" Atendimento : AtendimentoId
+ProfissionalSaude "1" --> "1" Especialidade : EspecialidadeId
+AltaHospitalar "1" --> "1" Internacao : InternacaoId
+
+@enduml
