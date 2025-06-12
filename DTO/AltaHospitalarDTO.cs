@@ -1,4 +1,8 @@
-﻿namespace HOSPISIM.Entities
+﻿
+
+using HOSPISIM.Entities;
+
+namespace HOSPISIM.DTO
 {
     public class AltaHospitalarDTO
     {

@@ -1,4 +1,4 @@
-﻿using HOSPISIM.Entities;
+﻿
 
 namespace HOSPISIM.DTO
 {

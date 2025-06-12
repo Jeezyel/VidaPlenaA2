@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using HOSPISIM.Entities;
+using HOSPISIM.DTO;
 using HOSPISIM.Persistence;
 using Microsoft.EntityFrameworkCore;
 

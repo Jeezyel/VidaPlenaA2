@@ -19,7 +19,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "HOSPISIM.Entities.AltaHospitalarDTO",
+        "Type": "HOSPISIM.DTO.AltaHospitalarDTO",
         "IsRequired": true
       }
     ],
@@ -56,7 +56,7 @@
       },
       {
         "Name": "dto",
-        "Type": "HOSPISIM.Entities.AltaHospitalarDTO",
+        "Type": "HOSPISIM.DTO.AltaHospitalarDTO",
         "IsRequired": true
       }
     ],
@@ -66,6 +66,164 @@
     "ContainingType": "HOSPISIM.Controllers.AltaHospitalarController",
     "Method": "Delete",
     "RelativePath": "api/altaHospitalar/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.AtendimentoController",
+    "Method": "GetAll",
+    "RelativePath": "api/Atendimento",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.AtendimentoController",
+    "Method": "Create",
+    "RelativePath": "api/Atendimento",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "HOSPISIM.DTO.AtendimentoDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.AtendimentoController",
+    "Method": "GetById",
+    "RelativePath": "api/Atendimento/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.AtendimentoController",
+    "Method": "Update",
+    "RelativePath": "api/Atendimento/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "HOSPISIM.DTO.AtendimentoDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.AtendimentoController",
+    "Method": "Delete",
+    "RelativePath": "api/Atendimento/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.EspecialidadeController",
+    "Method": "GetAll",
+    "RelativePath": "api/Especialidade",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.EspecialidadeController",
+    "Method": "Create",
+    "RelativePath": "api/Especialidade",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "HOSPISIM.DTO.EspecialidadeDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.EspecialidadeController",
+    "Method": "GetById",
+    "RelativePath": "api/Especialidade/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.EspecialidadeController",
+    "Method": "Update",
+    "RelativePath": "api/Especialidade/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "HOSPISIM.DTO.EspecialidadeDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.EspecialidadeController",
+    "Method": "Delete",
+    "RelativePath": "api/Especialidade/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -98,7 +256,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "HOSPISIM.Entities.ExameDTO",
+        "Type": "HOSPISIM.DTO.ExameDTO",
         "IsRequired": true
       }
     ],
@@ -135,7 +293,7 @@
       },
       {
         "Name": "dto",
-        "Type": "HOSPISIM.Entities.ExameDTO",
+        "Type": "HOSPISIM.DTO.ExameDTO",
         "IsRequired": true
       }
     ],
@@ -145,6 +303,85 @@
     "ContainingType": "HOSPISIM.Controllers.ExameController",
     "Method": "Delete",
     "RelativePath": "api/Exame/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.InternacaoController",
+    "Method": "GetAll",
+    "RelativePath": "api/Internacao",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.InternacaoController",
+    "Method": "Create",
+    "RelativePath": "api/Internacao",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "HOSPISIM.DTO.InternacaoDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.InternacaoController",
+    "Method": "GetById",
+    "RelativePath": "api/Internacao/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.InternacaoController",
+    "Method": "Update",
+    "RelativePath": "api/Internacao/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "HOSPISIM.DTO.InternacaoDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.InternacaoController",
+    "Method": "Delete",
+    "RelativePath": "api/Internacao/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -224,6 +461,243 @@
     "ContainingType": "PacienteController",
     "Method": "Delete",
     "RelativePath": "api/paciente/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.PrescricaoController",
+    "Method": "GetAll",
+    "RelativePath": "api/Prescricao",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.PrescricaoController",
+    "Method": "Create",
+    "RelativePath": "api/Prescricao",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "HOSPISIM.DTO.PrescricaoDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.PrescricaoController",
+    "Method": "GetById",
+    "RelativePath": "api/Prescricao/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.PrescricaoController",
+    "Method": "Update",
+    "RelativePath": "api/Prescricao/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "HOSPISIM.DTO.PrescricaoDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.PrescricaoController",
+    "Method": "Delete",
+    "RelativePath": "api/Prescricao/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.ProfissionalSaudeController",
+    "Method": "GetAll",
+    "RelativePath": "api/ProfissionalSaude",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.ProfissionalSaudeController",
+    "Method": "Create",
+    "RelativePath": "api/ProfissionalSaude",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "HOSPISIM.DTO.ProfissionalSaudeDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.ProfissionalSaudeController",
+    "Method": "GetById",
+    "RelativePath": "api/ProfissionalSaude/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.ProfissionalSaudeController",
+    "Method": "Update",
+    "RelativePath": "api/ProfissionalSaude/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "HOSPISIM.DTO.ProfissionalSaudeDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.ProfissionalSaudeController",
+    "Method": "Delete",
+    "RelativePath": "api/ProfissionalSaude/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.ProntuarioController",
+    "Method": "GetAll",
+    "RelativePath": "api/Prontuario",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.ProntuarioController",
+    "Method": "Create",
+    "RelativePath": "api/Prontuario",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "HOSPISIM.DTO.ProntuarioDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.ProntuarioController",
+    "Method": "GetById",
+    "RelativePath": "api/Prontuario/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.ProntuarioController",
+    "Method": "Update",
+    "RelativePath": "api/Prontuario/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "HOSPISIM.DTO.ProntuarioDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.ProntuarioController",
+    "Method": "Delete",
+    "RelativePath": "api/Prontuario/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
