@@ -18,6 +18,7 @@ API desenvolvida em ASP.NET Core para gerenciamento de .
   "ConnectionStrings": {
   "DefaultConnection": "coloque o seu banco de dados"
   }
+
 3.criaçao
   va no seu ssms e crie um banco para conectar com a api
 
