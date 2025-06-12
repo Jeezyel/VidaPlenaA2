@@ -6,7 +6,7 @@ using HOSPISIM.Entities;
 
 namespace HOSPISIM.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/atendimento")]
     [ApiController]
     public class AtendimentoController : ControllerBase
     {

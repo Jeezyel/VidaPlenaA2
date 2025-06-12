@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 namespace HOSPISIM.Controllers
 {
 
-    [Route("api/[controller]")]
+    [Route("api/prontuario")]
     [ApiController]
     public class ProntuarioController : ControllerBase
     {

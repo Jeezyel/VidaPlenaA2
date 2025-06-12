@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HOSPISIM.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/especialidade")]
     [ApiController]
     public class EspecialidadeController : ControllerBase
     {
