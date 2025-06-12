@@ -1,4 +1,6 @@
-﻿namespace HOSPISIM.Entities
+﻿using System.Text.Json.Serialization;
+
+namespace HOSPISIM.Entities
 {
     public class Atendimento
     {
@@ -16,6 +18,7 @@
         public ProfissionalSaude Profissional { get; set; }
 
         public Guid ProntuarioId { get; set; }
+        [JsonIgnore] // Evita o ciclo
         public Prontuario Prontuario { get; set; }
 
         // Relacionamentos 1:N
@@ -23,6 +26,7 @@
         public ICollection<Exame> Exames { get; set; }
 
         // Relacionamento 0..1:1 com Internacao
+        [JsonIgnore]
         public Internacao Internacao { get; set; }
     }
 }

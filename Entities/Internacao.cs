@@ -1,4 +1,6 @@
-﻿namespace HOSPISIM.Entities
+﻿using System.Text.Json.Serialization;
+
+namespace HOSPISIM.Entities
 {
     public class Internacao
     {
@@ -7,6 +9,8 @@
         public Paciente Paciente { get; set; }
 
         public Guid AtendimentoId { get; set; }
+
+        [JsonIgnore]
         public Atendimento Atendimento { get; set; }
 
         public DateTime DataEntrada { get; set; }
@@ -20,6 +24,7 @@
         public string StatusInternacao { get; set; }
 
         // Relacionamento 0..1:1 com AltaHospitalar
+        [JsonIgnore] // Evita o ciclo
         public AltaHospitalar AltaHospitalar { get; set; }
     }
 }

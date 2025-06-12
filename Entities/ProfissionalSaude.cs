@@ -1,4 +1,6 @@
-﻿namespace HOSPISIM.Entities
+﻿using System.Text.Json.Serialization;
+
+namespace HOSPISIM.Entities
 {
     public class ProfissionalSaude
     {
@@ -10,6 +12,7 @@
         public string RegistroConselho { get; set; }
         public string TipoRegistro { get; set; }
         public Guid EspecialidadeId { get; set; }
+
         public Especialidade Especialidade { get; set; }
         public DateTime DataAdmissao { get; set; }
         public int CargaHorariaSemanal { get; set; }
@@ -17,6 +20,7 @@
         public bool Ativo { get; set; }
 
         // Relacionamento 1:N com Atendimento
+        [JsonIgnore] // Evita o ciclo
         public ICollection<Atendimento> Atendimentos { get; set; }
     }
 

@@ -1,13 +1,19 @@
-﻿namespace HOSPISIM.Entities
+﻿using System.Text.Json.Serialization;
+
+namespace HOSPISIM.Entities
 {
 
     public class Prescricao
     {
         public Guid Id { get; set; }
         public Guid AtendimentoId { get; set; }
+
+        [JsonIgnore]
         public Atendimento Atendimento { get; set; }
 
         public Guid ProfissionalId { get; set; }
+
+        [JsonIgnore]
         public ProfissionalSaude Profissional { get; set; }
 
         public string Medicamento { get; set; }

@@ -1183,9 +1183,6 @@
             "type": "string",
             "format": "uuid"
           },
-          "internacao": {
-            "$ref": "#/components/schemas/Internacao"
-          },
           "data": {
             "type": "string",
             "format": "date-time"
@@ -1267,9 +1264,6 @@
             "type": "string",
             "format": "uuid"
           },
-          "prontuario": {
-            "$ref": "#/components/schemas/Prontuario"
-          },
           "prescricoes": {
             "type": "array",
             "items": {
@@ -1283,9 +1277,6 @@
               "$ref": "#/components/schemas/Exame"
             },
             "nullable": true
-          },
-          "internacao": {
-            "$ref": "#/components/schemas/Internacao"
           }
         },
         "additionalProperties": false
@@ -1360,13 +1351,6 @@
           "nome": {
             "type": "string",
             "nullable": true
-          },
-          "profissionais": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ProfissionalSaude"
-            },
-            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1412,9 +1396,6 @@
           "atendimentoId": {
             "type": "string",
             "format": "uuid"
-          },
-          "atendimento": {
-            "$ref": "#/components/schemas/Atendimento"
           }
         },
         "additionalProperties": false
@@ -1467,9 +1448,6 @@
             "type": "string",
             "format": "uuid"
           },
-          "atendimento": {
-            "$ref": "#/components/schemas/Atendimento"
-          },
           "dataEntrada": {
             "type": "string",
             "format": "date-time"
@@ -1506,9 +1484,6 @@
           "statusInternacao": {
             "type": "string",
             "nullable": true
-          },
-          "altaHospitalar": {
-            "$ref": "#/components/schemas/AltaHospitalar"
           }
         },
         "additionalProperties": false
@@ -1701,15 +1676,9 @@
             "type": "string",
             "format": "uuid"
           },
-          "atendimento": {
-            "$ref": "#/components/schemas/Atendimento"
-          },
           "profissionalId": {
             "type": "string",
             "format": "uuid"
-          },
-          "profissional": {
-            "$ref": "#/components/schemas/ProfissionalSaude"
           },
           "medicamento": {
             "type": "string",
@@ -1860,13 +1829,6 @@
           },
           "ativo": {
             "type": "boolean"
-          },
-          "atendimentos": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Atendimento"
-            },
-            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1952,16 +1914,6 @@
           "pacienteId": {
             "type": "string",
             "format": "uuid"
-          },
-          "paciente": {
-            "$ref": "#/components/schemas/Paciente"
-          },
-          "atendimentos": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Atendimento"
-            },
-            "nullable": true
           }
         },
         "additionalProperties": false
