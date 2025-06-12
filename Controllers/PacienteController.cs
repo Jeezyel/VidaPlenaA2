@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 
-[Route("api/[controller]")]
+[Route("api/paciente")]
 [ApiController]
 public class PacienteController : ControllerBase
 {
@@ -70,8 +70,8 @@ public class PacienteController : ControllerBase
     {
         // Busca o paciente existente
         var pacienteExistente = _context.Pacientes
-            .Include(p => p.Prontuarios) // inclui os prontuários atuais
-            .FirstOrDefault(p => p.Id == id);
+                                .Include(p => p.Prontuarios) // inclui os prontuários atuais
+                                .FirstOrDefault(p => p.Id == id);
 
         if (pacienteExistente == null)
             return NotFound("Paciente não encontrado.");

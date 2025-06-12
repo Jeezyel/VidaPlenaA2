@@ -1,12 +1,1 @@
-{
-  "Version": 1,
-  "Hash": "kcYF+f3z/UMKkM/CluFpKGZyw93saUUanA4GAMlT0bQ=",
-  "Source": "HOSPISIM",
-  "BasePath": "_content/HOSPISIM",
-  "Mode": "Default",
-  "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
-}
+{"Version":1,"Hash":"kcYF+f3z/UMKkM/CluFpKGZyw93saUUanA4GAMlT0bQ=","Source":"HOSPISIM","BasePath":"_content/HOSPISIM","Mode":"Default","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}

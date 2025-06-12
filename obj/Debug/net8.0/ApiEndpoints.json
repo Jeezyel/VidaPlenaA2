@@ -1,8 +1,166 @@
 [
   {
+    "ContainingType": "HOSPISIM.Controllers.AltaHospitalarController",
+    "Method": "GetAll",
+    "RelativePath": "api/altaHospitalar",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.AltaHospitalarController",
+    "Method": "Create",
+    "RelativePath": "api/altaHospitalar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "HOSPISIM.Entities.AltaHospitalarDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.AltaHospitalarController",
+    "Method": "GetById",
+    "RelativePath": "api/altaHospitalar/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.AltaHospitalarController",
+    "Method": "Update",
+    "RelativePath": "api/altaHospitalar/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "HOSPISIM.Entities.AltaHospitalarDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.AltaHospitalarController",
+    "Method": "Delete",
+    "RelativePath": "api/altaHospitalar/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.ExameController",
+    "Method": "GetAll",
+    "RelativePath": "api/Exame",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.ExameController",
+    "Method": "Create",
+    "RelativePath": "api/Exame",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "HOSPISIM.Entities.ExameDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.ExameController",
+    "Method": "GetById",
+    "RelativePath": "api/Exame/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.ExameController",
+    "Method": "Update",
+    "RelativePath": "api/Exame/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "HOSPISIM.Entities.ExameDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HOSPISIM.Controllers.ExameController",
+    "Method": "Delete",
+    "RelativePath": "api/Exame/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PacienteController",
     "Method": "GetAll",
-    "RelativePath": "api/Paciente",
+    "RelativePath": "api/paciente",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -12,7 +170,7 @@
   {
     "ContainingType": "PacienteController",
     "Method": "Create",
-    "RelativePath": "api/Paciente",
+    "RelativePath": "api/paciente",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -28,7 +186,7 @@
   {
     "ContainingType": "PacienteController",
     "Method": "GetById",
-    "RelativePath": "api/Paciente/{id}",
+    "RelativePath": "api/paciente/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -44,7 +202,7 @@
   {
     "ContainingType": "PacienteController",
     "Method": "Update",
-    "RelativePath": "api/Paciente/{id}",
+    "RelativePath": "api/paciente/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -65,7 +223,7 @@
   {
     "ContainingType": "PacienteController",
     "Method": "Delete",
-    "RelativePath": "api/Paciente/{id}",
+    "RelativePath": "api/paciente/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,

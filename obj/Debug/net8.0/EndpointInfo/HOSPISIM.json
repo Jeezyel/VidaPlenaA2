@@ -5,7 +5,257 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Paciente": {
+    "/api/altaHospitalar": {
+      "get": {
+        "tags": [
+          "AltaHospitalar"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "AltaHospitalar"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AltaHospitalarDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AltaHospitalarDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AltaHospitalarDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/altaHospitalar/{id}": {
+      "get": {
+        "tags": [
+          "AltaHospitalar"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "AltaHospitalar"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AltaHospitalarDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AltaHospitalarDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AltaHospitalarDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "AltaHospitalar"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Exame": {
+      "get": {
+        "tags": [
+          "Exame"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Exame"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExameDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExameDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExameDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Exame/{id}": {
+      "get": {
+        "tags": [
+          "Exame"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Exame"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExameDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExameDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExameDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Exame"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/paciente": {
       "get": {
         "tags": [
           "Paciente"
@@ -46,7 +296,7 @@
         }
       }
     },
-    "/api/Paciente/{id}": {
+    "/api/paciente/{id}": {
       "get": {
         "tags": [
           "Paciente"
@@ -172,6 +422,333 @@
   },
   "components": {
     "schemas": {
+      "AltaHospitalar": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "internacaoId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "internacao": {
+            "$ref": "#/components/schemas/Internacao"
+          },
+          "data": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "condicaoPaciente": {
+            "type": "string",
+            "nullable": true
+          },
+          "instrucoesPosAlta": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AltaHospitalarDTO": {
+        "type": "object",
+        "properties": {
+          "internacaoId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "internacao": {
+            "$ref": "#/components/schemas/Internacao"
+          },
+          "data": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "condicaoPaciente": {
+            "type": "string",
+            "nullable": true
+          },
+          "instrucoesPosAlta": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Atendimento": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "dataHora": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "tipo": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "local": {
+            "type": "string",
+            "nullable": true
+          },
+          "pacienteId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "paciente": {
+            "$ref": "#/components/schemas/Paciente"
+          },
+          "profissionalId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "profissional": {
+            "$ref": "#/components/schemas/ProfissionalSaude"
+          },
+          "prontuarioId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "prontuario": {
+            "$ref": "#/components/schemas/Prontuario"
+          },
+          "prescricoes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Prescricao"
+            },
+            "nullable": true
+          },
+          "exames": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Exame"
+            },
+            "nullable": true
+          },
+          "internacao": {
+            "$ref": "#/components/schemas/Internacao"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Especialidade": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "profissionais": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProfissionalSaude"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Exame": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "tipo": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataSolicitacao": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dataRealizacao": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "resultado": {
+            "type": "string",
+            "nullable": true
+          },
+          "atendimentoId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "atendimento": {
+            "$ref": "#/components/schemas/Atendimento"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ExameDTO": {
+        "type": "object",
+        "properties": {
+          "tipo": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataSolicitacao": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dataRealizacao": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "resultado": {
+            "type": "string",
+            "nullable": true
+          },
+          "atendimentoId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "atendimento": {
+            "$ref": "#/components/schemas/Atendimento"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Internacao": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "pacienteId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "paciente": {
+            "$ref": "#/components/schemas/Paciente"
+          },
+          "atendimentoId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "atendimento": {
+            "$ref": "#/components/schemas/Atendimento"
+          },
+          "dataEntrada": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "previsaoAlta": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "motivoInternacao": {
+            "type": "string",
+            "nullable": true
+          },
+          "leito": {
+            "type": "string",
+            "nullable": true
+          },
+          "quarto": {
+            "type": "string",
+            "nullable": true
+          },
+          "setor": {
+            "type": "string",
+            "nullable": true
+          },
+          "planoSaudeUtilizado": {
+            "type": "string",
+            "nullable": true
+          },
+          "observacoesClinicas": {
+            "type": "string",
+            "nullable": true
+          },
+          "statusInternacao": {
+            "type": "string",
+            "nullable": true
+          },
+          "altaHospitalar": {
+            "$ref": "#/components/schemas/AltaHospitalar"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Paciente": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "nomeCompleto": {
+            "type": "string",
+            "nullable": true
+          },
+          "cpf": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataNascimento": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "sexo": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoSanguineo": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefone": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "enderecoCompleto": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroCartaoSUS": {
+            "type": "string",
+            "nullable": true
+          },
+          "estadoCivil": {
+            "type": "string",
+            "nullable": true
+          },
+          "possuiPlanoSaude": {
+            "type": "boolean"
+          },
+          "prontuarios": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Prontuario"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "PacienteDTO": {
         "type": "object",
         "properties": {
@@ -223,6 +800,166 @@
             "items": {
               "type": "string",
               "format": "uuid"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Prescricao": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "atendimentoId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "atendimento": {
+            "$ref": "#/components/schemas/Atendimento"
+          },
+          "profissionalId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "profissional": {
+            "$ref": "#/components/schemas/ProfissionalSaude"
+          },
+          "medicamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "dosagem": {
+            "type": "string",
+            "nullable": true
+          },
+          "frequencia": {
+            "type": "string",
+            "nullable": true
+          },
+          "viaAdministracao": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataInicio": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dataFim": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "observacoes": {
+            "type": "string",
+            "nullable": true
+          },
+          "statusPrescricao": {
+            "type": "string",
+            "nullable": true
+          },
+          "reacoesAdversas": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProfissionalSaude": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "nomeCompleto": {
+            "type": "string",
+            "nullable": true
+          },
+          "cpf": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefone": {
+            "type": "string",
+            "nullable": true
+          },
+          "registroConselho": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoRegistro": {
+            "type": "string",
+            "nullable": true
+          },
+          "especialidadeId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "especialidade": {
+            "$ref": "#/components/schemas/Especialidade"
+          },
+          "dataAdmissao": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "cargaHorariaSemanal": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "turno": {
+            "type": "string",
+            "nullable": true
+          },
+          "ativo": {
+            "type": "boolean"
+          },
+          "atendimentos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Atendimento"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Prontuario": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "numeroProntuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataAbertura": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "observacoesGerais": {
+            "type": "string",
+            "nullable": true
+          },
+          "pacienteId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "paciente": {
+            "$ref": "#/components/schemas/Paciente"
+          },
+          "atendimentos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Atendimento"
             },
             "nullable": true
           }

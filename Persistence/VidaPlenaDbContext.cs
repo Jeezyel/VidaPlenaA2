@@ -29,14 +29,14 @@ namespace HOSPISIM.Persistence
                 .HasMany(p => p.Prontuarios)
                 .WithOne(pr => pr.Paciente)
                 .HasForeignKey(pr => pr.PacienteId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict); // ou ClientSetNull
 
             // Prontuario 1:N Atendimento
             modelBuilder.Entity<Prontuario>()
                 .HasMany(pr => pr.Atendimentos)
                 .WithOne(a => a.Prontuario)
                 .HasForeignKey(a => a.ProntuarioId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict);
 
             // Profissional 1:N Atendimento
             modelBuilder.Entity<ProfissionalSaude>()
@@ -50,28 +50,28 @@ namespace HOSPISIM.Persistence
                 .HasMany(a => a.Prescricoes)
                 .WithOne(pr => pr.Atendimento)
                 .HasForeignKey(pr => pr.AtendimentoId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict);
 
             // Atendimento 1:N Exame
             modelBuilder.Entity<Atendimento>()
                 .HasMany(a => a.Exames)
                 .WithOne(e => e.Atendimento)
                 .HasForeignKey(e => e.AtendimentoId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict);
 
             // Atendimento 0..1:1 Internacao
             modelBuilder.Entity<Atendimento>()
                 .HasOne(a => a.Internacao)
                 .WithOne(i => i.Atendimento)
                 .HasForeignKey<Internacao>(i => i.AtendimentoId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict);
 
             // Internacao 0..1:1 AltaHospitalar
             modelBuilder.Entity<Internacao>()
                 .HasOne(i => i.AltaHospitalar)
                 .WithOne(a => a.Internacao)
                 .HasForeignKey<AltaHospitalar>(a => a.InternacaoId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict);
 
             // Profissional N:1 Especialidade
             modelBuilder.Entity<ProfissionalSaude>()
@@ -80,12 +80,11 @@ namespace HOSPISIM.Persistence
                 .HasForeignKey(p => p.EspecialidadeId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // Opcional: configurando propriedades específicas (exemplo)
+            // Exemplo de propriedade
             modelBuilder.Entity<Paciente>()
                 .Property(p => p.Email)
-                .IsRequired(false); // permite null
-
-            // Você pode adicionar mais configurações de propriedades e índices conforme desejar
+                .IsRequired(false);
         }
+
     }
 }
