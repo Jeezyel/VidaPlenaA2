@@ -17,7 +17,7 @@ namespace HOSPISIM.DTO
         public bool PossuiPlanoSaude { get; set; }
 
         // Relacionamento 1:N com Prontuario
-        public ICollection<Guid> ProntuarioIds { get; set; }
+        public  Guid ProntuarioIds { get; set; }
 
     }
 }

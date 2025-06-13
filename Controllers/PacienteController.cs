@@ -37,9 +37,13 @@ public class PacienteController : ControllerBase
     [HttpPost]
     public IActionResult Create(PacienteDTO dto)
     {
-        var prontuarios = _context.Prontuarios
-        .Where(p => dto.ProntuarioIds.Contains(p.Id))
-        .ToList();
+        if (dto == null)
+            return BadRequest("Dados do paciente são obrigatórios.");
+
+        var prontuario = _context.Prontuarios.Find(dto.ProntuarioIds);
+
+        if (prontuario == null)
+            return BadRequest("Prontuário não encontrado.");
 
         var paciente = new Paciente
         {
@@ -53,25 +57,41 @@ public class PacienteController : ControllerBase
             Email = dto.Email,
             EnderecoCompleto = dto.EnderecoCompleto,
             NumeroCartaoSUS = dto.NumeroCartaoSUS,
+            EstadoCivil = dto.EstadoCivil,
             PossuiPlanoSaude = dto.PossuiPlanoSaude,
-
-            Prontuarios = prontuarios
-
+            Prontuarios = new List<Prontuario> { prontuario }
         };
 
-        _context.Pacientes.Add(paciente);
-        _context.SaveChanges();
+        try
+        {
+            _context.Pacientes.Add(paciente);
+            _context.SaveChanges();
+        }
+        catch (Exception ex)
+        {
+            // Logar o erro se necessário
+            return StatusCode(500, "Erro ao salvar paciente: " + ex.Message);
+        }
 
-        return CreatedAtAction(nameof(GetById), new { id = paciente.Id }, paciente);
+        // Retorne um DTO ou ViewModel se possível
+        return CreatedAtAction(nameof(GetById), new { id = paciente.Id }, new
+        {
+            paciente.Id,
+            paciente.NomeCompleto,
+            paciente.CPF,
+            paciente.DataNascimento
+        });
     }
 
     [HttpPut("{id}")]
     public IActionResult Update(Guid id, PacienteDTO dto)
     {
-        // Busca o paciente existente
+        if (dto == null)
+            return BadRequest("Dados do paciente são obrigatórios.");
+
         var pacienteExistente = _context.Pacientes
-                                .Include(p => p.Prontuarios) // inclui os prontuários atuais
-                                .FirstOrDefault(p => p.Id == id);
+            .Include(p => p.Prontuarios)
+            .FirstOrDefault(p => p.Id == id);
 
         if (pacienteExistente == null)
             return NotFound("Paciente não encontrado.");
@@ -89,17 +109,29 @@ public class PacienteController : ControllerBase
         pacienteExistente.EstadoCivil = dto.EstadoCivil;
         pacienteExistente.PossuiPlanoSaude = dto.PossuiPlanoSaude;
 
-        // Atualiza os prontuários associados (se algum foi passado)
-        if (dto.ProntuarioIds != null)
+        // Atualiza o prontuário associado (se algum foi passado)
+        if (dto.ProntuarioIds != Guid.Empty)
         {
-            var prontuarios = _context.Prontuarios
-                .Where(p => dto.ProntuarioIds.Contains(p.Id))
-                .ToList();
+            var prontuario = _context.Prontuarios.Find(dto.ProntuarioIds);
+            if (prontuario == null)
+                return BadRequest("Prontuário não encontrado.");
 
-            pacienteExistente.Prontuarios = prontuarios;
+            // Adiciona apenas se não estiver presente
+            if (!pacienteExistente.Prontuarios.Any(p => p == prontuario))
+            {
+                pacienteExistente.Prontuarios.Add(prontuario);
+            }
         }
 
-        _context.SaveChanges();
+        try
+        {
+            _context.SaveChanges();
+        }
+        catch (Exception ex)
+        {
+            // Logar o erro se necessário
+            return StatusCode(500, "Erro ao atualizar paciente: " + ex.Message);
+        }
 
         return NoContent(); // 204 - Atualizado com sucesso, sem retorno de corpo
     }

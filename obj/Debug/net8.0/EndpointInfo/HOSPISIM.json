@@ -130,7 +130,7 @@
         }
       }
     },
-    "/api/Atendimento": {
+    "/api/atendimento": {
       "get": {
         "tags": [
           "Atendimento"
@@ -171,7 +171,7 @@
         }
       }
     },
-    "/api/Atendimento/{id}": {
+    "/api/atendimento/{id}": {
       "get": {
         "tags": [
           "Atendimento"
@@ -255,7 +255,7 @@
         }
       }
     },
-    "/api/Especialidade": {
+    "/api/especialidade": {
       "get": {
         "tags": [
           "Especialidade"
@@ -296,7 +296,7 @@
         }
       }
     },
-    "/api/Especialidade/{id}": {
+    "/api/especialidade/{id}": {
       "get": {
         "tags": [
           "Especialidade"
@@ -505,7 +505,7 @@
         }
       }
     },
-    "/api/Internacao": {
+    "/api/internacao": {
       "get": {
         "tags": [
           "Internacao"
@@ -546,7 +546,7 @@
         }
       }
     },
-    "/api/Internacao/{id}": {
+    "/api/internacao/{id}": {
       "get": {
         "tags": [
           "Internacao"
@@ -755,7 +755,7 @@
         }
       }
     },
-    "/api/Prescricao": {
+    "/api/prescricao": {
       "get": {
         "tags": [
           "Prescricao"
@@ -796,7 +796,7 @@
         }
       }
     },
-    "/api/Prescricao/{id}": {
+    "/api/prescricao/{id}": {
       "get": {
         "tags": [
           "Prescricao"
@@ -880,7 +880,7 @@
         }
       }
     },
-    "/api/ProfissionalSaude": {
+    "/api/profissionalSaude": {
       "get": {
         "tags": [
           "ProfissionalSaude"
@@ -921,7 +921,7 @@
         }
       }
     },
-    "/api/ProfissionalSaude/{id}": {
+    "/api/profissionalSaude/{id}": {
       "get": {
         "tags": [
           "ProfissionalSaude"
@@ -1005,7 +1005,7 @@
         }
       }
     },
-    "/api/Prontuario": {
+    "/api/prontuario": {
       "get": {
         "tags": [
           "Prontuario"
@@ -1046,7 +1046,7 @@
         }
       }
     },
-    "/api/Prontuario/{id}": {
+    "/api/prontuario/{id}": {
       "get": {
         "tags": [
           "Prontuario"
@@ -1655,12 +1655,8 @@
             "type": "boolean"
           },
           "prontuarioIds": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uuid"
-            },
-            "nullable": true
+            "type": "string",
+            "format": "uuid"
           }
         },
         "additionalProperties": false

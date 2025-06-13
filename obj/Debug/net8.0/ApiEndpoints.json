@@ -81,7 +81,7 @@
   {
     "ContainingType": "HOSPISIM.Controllers.AtendimentoController",
     "Method": "GetAll",
-    "RelativePath": "api/Atendimento",
+    "RelativePath": "api/atendimento",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -91,7 +91,7 @@
   {
     "ContainingType": "HOSPISIM.Controllers.AtendimentoController",
     "Method": "Create",
-    "RelativePath": "api/Atendimento",
+    "RelativePath": "api/atendimento",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -107,7 +107,7 @@
   {
     "ContainingType": "HOSPISIM.Controllers.AtendimentoController",
     "Method": "GetById",
-    "RelativePath": "api/Atendimento/{id}",
+    "RelativePath": "api/atendimento/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -123,7 +123,7 @@
   {
     "ContainingType": "HOSPISIM.Controllers.AtendimentoController",
     "Method": "Update",
-    "RelativePath": "api/Atendimento/{id}",
+    "RelativePath": "api/atendimento/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -144,7 +144,7 @@
   {
     "ContainingType": "HOSPISIM.Controllers.AtendimentoController",
     "Method": "Delete",
-    "RelativePath": "api/Atendimento/{id}",
+    "RelativePath": "api/atendimento/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -160,7 +160,7 @@
   {
     "ContainingType": "HOSPISIM.Controllers.EspecialidadeController",
     "Method": "GetAll",
-    "RelativePath": "api/Especialidade",
+    "RelativePath": "api/especialidade",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -170,7 +170,7 @@
   {
     "ContainingType": "HOSPISIM.Controllers.EspecialidadeController",
     "Method": "Create",
-    "RelativePath": "api/Especialidade",
+    "RelativePath": "api/especialidade",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -186,7 +186,7 @@
   {
     "ContainingType": "HOSPISIM.Controllers.EspecialidadeController",
     "Method": "GetById",
-    "RelativePath": "api/Especialidade/{id}",
+    "RelativePath": "api/especialidade/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -202,7 +202,7 @@
   {
     "ContainingType": "HOSPISIM.Controllers.EspecialidadeController",
     "Method": "Update",
-    "RelativePath": "api/Especialidade/{id}",
+    "RelativePath": "api/especialidade/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -223,7 +223,7 @@
   {
     "ContainingType": "HOSPISIM.Controllers.EspecialidadeController",
     "Method": "Delete",
-    "RelativePath": "api/Especialidade/{id}",
+    "RelativePath": "api/especialidade/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -318,7 +318,7 @@
   {
     "ContainingType": "HOSPISIM.Controllers.InternacaoController",
     "Method": "GetAll",
-    "RelativePath": "api/Internacao",
+    "RelativePath": "api/internacao",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -328,7 +328,7 @@
   {
     "ContainingType": "HOSPISIM.Controllers.InternacaoController",
     "Method": "Create",
-    "RelativePath": "api/Internacao",
+    "RelativePath": "api/internacao",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -344,7 +344,7 @@
   {
     "ContainingType": "HOSPISIM.Controllers.InternacaoController",
     "Method": "GetById",
-    "RelativePath": "api/Internacao/{id}",
+    "RelativePath": "api/internacao/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -360,7 +360,7 @@
   {
     "ContainingType": "HOSPISIM.Controllers.InternacaoController",
     "Method": "Update",
-    "RelativePath": "api/Internacao/{id}",
+    "RelativePath": "api/internacao/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -381,7 +381,7 @@
   {
     "ContainingType": "HOSPISIM.Controllers.InternacaoController",
     "Method": "Delete",
-    "RelativePath": "api/Internacao/{id}",
+    "RelativePath": "api/internacao/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -476,7 +476,7 @@
   {
     "ContainingType": "HOSPISIM.Controllers.PrescricaoController",
     "Method": "GetAll",
-    "RelativePath": "api/Prescricao",
+    "RelativePath": "api/prescricao",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -486,7 +486,7 @@
   {
     "ContainingType": "HOSPISIM.Controllers.PrescricaoController",
     "Method": "Create",
-    "RelativePath": "api/Prescricao",
+    "RelativePath": "api/prescricao",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -502,7 +502,7 @@
   {
     "ContainingType": "HOSPISIM.Controllers.PrescricaoController",
     "Method": "GetById",
-    "RelativePath": "api/Prescricao/{id}",
+    "RelativePath": "api/prescricao/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -518,7 +518,7 @@
   {
     "ContainingType": "HOSPISIM.Controllers.PrescricaoController",
     "Method": "Update",
-    "RelativePath": "api/Prescricao/{id}",
+    "RelativePath": "api/prescricao/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -539,7 +539,7 @@
   {
     "ContainingType": "HOSPISIM.Controllers.PrescricaoController",
     "Method": "Delete",
-    "RelativePath": "api/Prescricao/{id}",
+    "RelativePath": "api/prescricao/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -555,7 +555,7 @@
   {
     "ContainingType": "HOSPISIM.Controllers.ProfissionalSaudeController",
     "Method": "GetAll",
-    "RelativePath": "api/ProfissionalSaude",
+    "RelativePath": "api/profissionalSaude",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -565,7 +565,7 @@
   {
     "ContainingType": "HOSPISIM.Controllers.ProfissionalSaudeController",
     "Method": "Create",
-    "RelativePath": "api/ProfissionalSaude",
+    "RelativePath": "api/profissionalSaude",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -581,7 +581,7 @@
   {
     "ContainingType": "HOSPISIM.Controllers.ProfissionalSaudeController",
     "Method": "GetById",
-    "RelativePath": "api/ProfissionalSaude/{id}",
+    "RelativePath": "api/profissionalSaude/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -597,7 +597,7 @@
   {
     "ContainingType": "HOSPISIM.Controllers.ProfissionalSaudeController",
     "Method": "Update",
-    "RelativePath": "api/ProfissionalSaude/{id}",
+    "RelativePath": "api/profissionalSaude/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -618,7 +618,7 @@
   {
     "ContainingType": "HOSPISIM.Controllers.ProfissionalSaudeController",
     "Method": "Delete",
-    "RelativePath": "api/ProfissionalSaude/{id}",
+    "RelativePath": "api/profissionalSaude/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -634,7 +634,7 @@
   {
     "ContainingType": "HOSPISIM.Controllers.ProntuarioController",
     "Method": "GetAll",
-    "RelativePath": "api/Prontuario",
+    "RelativePath": "api/prontuario",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -644,7 +644,7 @@
   {
     "ContainingType": "HOSPISIM.Controllers.ProntuarioController",
     "Method": "Create",
-    "RelativePath": "api/Prontuario",
+    "RelativePath": "api/prontuario",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -660,7 +660,7 @@
   {
     "ContainingType": "HOSPISIM.Controllers.ProntuarioController",
     "Method": "GetById",
-    "RelativePath": "api/Prontuario/{id}",
+    "RelativePath": "api/prontuario/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -676,7 +676,7 @@
   {
     "ContainingType": "HOSPISIM.Controllers.ProntuarioController",
     "Method": "Update",
-    "RelativePath": "api/Prontuario/{id}",
+    "RelativePath": "api/prontuario/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -697,7 +697,7 @@
   {
     "ContainingType": "HOSPISIM.Controllers.ProntuarioController",
     "Method": "Delete",
-    "RelativePath": "api/Prontuario/{id}",
+    "RelativePath": "api/prontuario/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
